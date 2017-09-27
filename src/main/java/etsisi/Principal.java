@@ -1,24 +1,33 @@
 package etsisi;
 
+import etsisi.kk.Utils;
+
+import javax.rmi.CORBA.Util;
+import java.util.ArrayList;
+import java.util.List;
+
 public class Principal {
-    private static final int SIZE = 10;
-    private Equipo[] equipos = new Equipo[SIZE];
+    private List<Equipo> equipos = new ArrayList<>();
 
     public static void main(String[] args) {
         new Principal().start();
     }
 
     private void start() {
-        for (int i=0; i<SIZE; i++) {
-            equipos[i] = new Equipo("Equipo " + i);
+        for (String nombre:Utils.nombres) {
+            equipos.add(new Equipo(nombre));
         }
 
-        Partido partido_1 = new Partido(equipos[1], equipos[2]);
-        Partido partido_2 = new Partido(equipos[1], equipos[0]);
+
+        Partido partido = null;
+        for (Equipo equipo_local:equipos)
+            for (Equipo equipo_visitante:equipos)
+                if (!equipo_local.equals(equipo_visitante))
+                    partido = new Partido(equipo_local, equipo_visitante);
 
 
-        for (int i=0; i<SIZE; i++) {
-            System.out.println(equipos[i].todosPartidos());
+        for (Equipo equipo:equipos) {
+            System.out.println(equipo.todosPartidos());
         }
     }
 }
