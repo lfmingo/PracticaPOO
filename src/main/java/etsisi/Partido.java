@@ -26,7 +26,7 @@ public class Partido {
 
     @Override
     public String toString() {
-        return equipoLocal +
+        return   equipoLocal +
                 "(" + golesLocal +
                 ") - " + equipoVisitante +
                 "(" + golesVisitante +

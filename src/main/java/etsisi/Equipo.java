@@ -28,14 +28,10 @@ public class Equipo {
 
     @Override
     public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
         Equipo equipo = (Equipo) o;
         return nombre.equals(equipo.nombre);
     }
 
-    @Override
-    public int hashCode() {
-        return nombre.hashCode();
-    }
+
+
 }

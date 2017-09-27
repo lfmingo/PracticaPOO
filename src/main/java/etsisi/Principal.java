@@ -2,7 +2,6 @@ package etsisi;
 
 import etsisi.kk.Utils;
 
-import javax.rmi.CORBA.Util;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -20,10 +19,12 @@ public class Principal {
 
 
         Partido partido = null;
-        for (Equipo equipo_local:equipos)
-            for (Equipo equipo_visitante:equipos)
+        for (Equipo equipo_local:equipos) {
+            for (Equipo equipo_visitante : equipos)
                 if (!equipo_local.equals(equipo_visitante))
                     partido = new Partido(equipo_local, equipo_visitante);
+        }
+
 
 
         for (Equipo equipo:equipos) {
