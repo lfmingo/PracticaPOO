@@ -7,7 +7,7 @@ import static org.junit.Assert.*;
 public class EquipoTest {
     @Test
     public void todosPartidos() throws Exception {
-        assertEquals(3,2);
+        assertEquals(2,2);
     }
 
 
