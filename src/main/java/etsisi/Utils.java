@@ -1,4 +1,4 @@
-package etsisi.kk;
+package etsisi;
 
 public class Utils {
     public static String nombres[] = {  "Real Madrid",

@@ -14,7 +14,7 @@ public class Partido {
     }
 
     public Equipo equipoGanador() {
-        if (golesLocal >golesVisitante) return equipoLocal;
+        if (golesLocal > golesVisitante) return equipoLocal;
         else if (golesLocal < golesVisitante) return equipoVisitante;
         else return null;
     }

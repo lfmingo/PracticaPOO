@@ -2,6 +2,7 @@ package etsisi;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.stream.Collectors;
 
 public class Equipo {
     private String nombre;
@@ -17,8 +18,8 @@ public class Equipo {
         return nombre;
     }
 
-    public String todosPartidos() {
-        return nombre + "\n" + partidos + "\n";
+    public List<Partido> todosPartidos() {
+        return partidos;
     }
 
 
@@ -33,5 +34,15 @@ public class Equipo {
     }
 
 
+    public List<Partido> partidosGanados() {
+        return partidos.stream().filter( x -> x.equipoGanador()!=null).filter(x -> x.equipoGanador().equals(this)).collect(Collectors.toList());
+    }
 
+    public List<Partido> partidosPerdidos() {
+        return partidos.stream().filter( x -> x.equipoGanador()!=null).filter(x -> !x.equipoGanador().equals(this)).collect(Collectors.toList());
+    }
+
+    public List<Partido> partidosEmpatados() {
+        return partidos.stream().filter( x -> x.equipoGanador()==null).collect(Collectors.toList());
+    }
 }
