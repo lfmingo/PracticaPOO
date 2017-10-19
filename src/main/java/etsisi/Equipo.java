@@ -35,7 +35,7 @@ public class Equipo {
 
 
     public List<Partido> partidosGanados() {
-        return partidos.stream().filter( x -> x.equipoGanador()!=null).filter(x -> x.equipoGanador().equals(this)).collect(Collectors.toList());
+        return partidos.stream().filter( x  -> x.equipoGanador()!=null).filter(x -> x.equipoGanador().equals(this)).collect(Collectors.toList());
     }
 
     public List<Partido> partidosPerdidos() {
